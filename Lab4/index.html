@@ -28,16 +28,14 @@
                 zoom: 4
             });
 
-          L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
-            id: 'mapbox.light',
-            maxzoom: 4,
-            minzoom: 4,
-            accessToken: 'pk.eyJ1IjoiY3VyZW1hbmdvIiwiYSI6ImNpcTQ4cGFwbDAxbmVmd25vZGNiOTVzeGEifQ.GWZByYkIft6eMRha69C8nw'
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 19
           }).addTo(map);
 
           //change the file name to yours
-            $.getJSON("https://rshepard2.github.io/cases2.geojson")  // The getJSON() method is used to get JSON data
+            $.getJSON("https://cniels.github.io/Lab4/map.geojson")  // The getJSON() method is used to get JSON data
             .done(function(data) {
                 var info = processData(data);
                 createPropSymbols(info.timestamps, data);
