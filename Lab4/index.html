@@ -2,7 +2,7 @@
 <!-- saved from url=(0049)https://rshepard2.github.io/Lab4/lab4example.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       
-      <title>Lab 4</title>
+      <title>Christian Nielsen Lab 4</title>
 
       <link rel="stylesheet" href="./Lab 4_files/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="">
 
@@ -24,7 +24,7 @@
 
       <script>
           var map = L.map('map', {
-                center: [38.1625228, -96.9633171],
+                center: [33.707219, 102.702077],
                 zoom: 4
             });
 
@@ -95,18 +95,18 @@
                   // To alter this, the pointToLayer function needs to be used
                   pointToLayer: function(feature, latlng) {
                       return L.circleMarker(latlng, { // we use circle marker for the points
-                          fillColor: "#501e65",  // fill color of the circles
-                          color: '#501e65',      // border color of the circles
+                          fillColor: "#EC401B",  // fill color of the circles
+                          color: '#EC401B',      // border color of the circles
                           weight: 2,             // circle line weight in pixels
                           fillOpacity: 0.5       // fill opacity (0-1)
                       }).on({
                          mouseover: function(e) {
                             this.openPopup();
-                            this.setStyle({fillColor: 'green'});  // fill color turns green when mouseover
+                            this.setStyle({fillColor: 'orange'});  // fill color turns green when mouseover
                         },
                         mouseout: function(e) {
                             this.closePopup();
-                            this.setStyle({fillColor: '#501e65'});  // fill turns original color when mouseout
+                            this.setStyle({fillColor: '#EC401B'});  // fill turns original color when mouseout
                         }
                     });
                   }
@@ -146,7 +146,7 @@ function createSliderUI(timestamps) {
     return slider;
   }
   sliderControl.addTo(map);
-  createTimeLabel("1950"); //The starting timestamp label
+  createTimeLabel("Day 1"); //The starting timestamp label
   }
 
 
