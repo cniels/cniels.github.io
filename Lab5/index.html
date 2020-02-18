@@ -12,6 +12,9 @@
         #map {min-height: 100%;}
         </style>
 
+    <script src="https://cniels.github.io/Lab5/data.js"></script>
+    <script src="htts://cniels.github.io/Lab5/coronaData.js"></script>
+
     </head>
 
     <body>
@@ -41,16 +44,12 @@
 
     </script>
     
-    <script src="https://cniels.github.io/Lab5/data.js">
-    var provinces = L.geoJson(data).addTo(map);
-    </script>
 
-    <script src="htts://cniels.github.io/Lab5/coronaData.js">
-    var covid19 = L.geoJson(data).addTo(map);
-    </script>
 
     <script>
-        var legend = L.control({position: 'bottomleft'});
+        var provinces = L.geoJson(data).addTo(map);
+        
+        var covid19 = L.geoJson(data2).addTo(map);
         
         var baseMaps = {
             "Light Canvas" : canvas,
