@@ -10,6 +10,20 @@
         <style type="text/css">
         html, body {margin: 0; padding: 0; height: 100%;}
         #map {min-height: 100%;}
+            .legend{
+                padding: 6px 8px;
+                line-height: 18px;
+                background: rgba(255,255,255,0.9);
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+            .legend i{
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }
         </style>
 
     <script src="https://cniels.github.io/Lab5/data.js"></script>
@@ -42,15 +56,46 @@
         ext: 'png'
     }).addTo(map);
 
-    </script>
-    
 
+        var provinces = L.geoJson(data, {style:style}).addTo(map);
+        
+        var minValue = 100;
+        var minRadius = 5;
+        function calcRadius(val){
+            return 0.9*Math.pow(val/minValue, .7) * minRadius;
+        }
 
-    <script>
-        var provinces = L.geoJson(data).addTo(map);
+        var covid19 = L.geoJson(covidData, {
+            pointToLayer : function(feature, ll){
+                return L.circleMarker(ll, {
+                    color: '#F2F3F4',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#CCD1D1',
+                    fillOpacity: .5,
+                    radius: calcRadius(feature.properties.covid)
+                });
+            }
+        }).addTo(map);
+
+        function getColor(value) {
+            return value > 100000000 ? '#76D7C4':
+                   value > 50000000 ? '#48C9B0':
+                   value > 20000000 ? '#1ABC9C':
+                   value > 10000000  ? '#17A589':
+                   '#D1F2EB';
+        }
         
-        var covid19 = L.geoJson(covidData).addTo(map);
-        
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.POP10),
+                weight: 2,
+                opacity: 1,
+                color: 'gray',
+                fillOpacity: 0.9
+                };
+            }
+
         var baseMaps = {
             "Light Canvas" : canvas,
             "Satellite Imagery" : imagery
@@ -61,7 +106,27 @@
             "COVID-19 Cases" : covid19
         };
 
-        L.control.layers(baseMaps, overlayMaps).addTo(map);
+        L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
+        
+        var legend = L.control({position: 'bottomright'});
+            legend.onAdd = function(map){
+                var div = L.DomUtil.create('div', 'legend'),
+                grades = [0, 1000000, 2000000, 5000000, 10000000]; 
+                div.innerHTML = '<b>Population 2019 <br><br></b>';
+                for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML +=
+                    '<i style="background:' + getColor(grades[i] + 1) + '"></i>' + 
+                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] +   '<br><br>' : '+');
+                    }return div;              
+            };
+        legend.addTo(map);
+    
+        map.on('overlayremove', function(eventLayer){              
+            if (eventLayer.name == 'provinces'){ // We use the key/display name to refer to the layer                
+                map.removeControl(legend); // legend is the variable name of the layer legend              
+        }            
+        });
+
     </script>
     
 </body>
