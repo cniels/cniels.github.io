@@ -42,7 +42,7 @@
             zoom: 5
         });
         
-		var imagery = L.tileLayer("https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}", {attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors',
+		var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
 		subdomains: 'abcd',
 		minZoom: 0,
 		maxZoom: 18,
@@ -65,7 +65,17 @@
             return 0.9*Math.pow(val/minValue, .7) * minRadius;
         }
 
+        var onEachFeature = function(feature, layer){
+            if(feature.properties){
+                var prop=feature.properties;
+                var popup='<h3>'+prop['Location']+'</h3>'+'<br>Cases Day 1: '+prop['1']+'<br>Cases Day 16: '+prop['covid'];
+                feature.layer = layer;
+                layer.bindPopup(popup, {maxWidth: "auto"});
+            }
+        };
+
         var covid19 = L.geoJson(covidData, {
+            onEachFeature : onEachFeature,
             pointToLayer : function(feature, ll){
                 return L.circleMarker(ll, {
                     color: '#F2F3F4',
@@ -79,11 +89,11 @@
         }).addTo(map);
 
         function getColor(value) {
-            return value > 100000000 ? '#76D7C4':
-                   value > 50000000 ? '#48C9B0':
-                   value > 20000000 ? '#1ABC9C':
-                   value > 10000000  ? '#17A589':
-                   '#D1F2EB';
+            return value > 50000000  ? '#54278f':
+                   value > 25000000   ? '#756bb1':
+                   value > 10000000   ? '#9e9ac8':
+                   value > 5000000    ? '#cbc9e2':
+                   '#f2f0f7';
         }
         
         function style(feature) {
@@ -111,7 +121,7 @@
         var legend = L.control({position: 'bottomright'});
             legend.onAdd = function(map){
                 var div = L.DomUtil.create('div', 'legend'),
-                grades = [0, 1000000, 2000000, 5000000, 10000000]; 
+                grades = [0, 5000000, 10000000, 25000000, 50000000]; 
                 div.innerHTML = '<b>Population 2019 <br><br></b>';
                 for (var i = 0; i < grades.length; i++) {
                     div.innerHTML +=
@@ -126,6 +136,8 @@
                 map.removeControl(legend); // legend is the variable name of the layer legend              
         }            
         });
+
+
 
     </script>
     
