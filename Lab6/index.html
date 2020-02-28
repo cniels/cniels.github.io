@@ -17,56 +17,44 @@
                 url: "https://gisext.lincoln.ne.gov/arcgis/rest/services/Parks/Park_Boundaries/MapServer/0"
             });
 
-            const renderer = {          type: "simple",          field: "CNTASSDVAL",legendOptions: {title: "Assessed values in Lincoln"},          symbol: {            type: "simple-marker",            color: "yellow",            outline: {              color: "black"            }          },           visualVariables: [            {              type: "size",              field: "CNTASSDVAL",              stops: [                {                  value: 25000,                   size: "5px",     label: "Under 25,000"                },                {
-                   value: 100000,                    size: "10px",      label: "20,000 to 99,999"                }, {     value: 500000,                     size: "15px",       label: "100,000 to 500,000"                },                {                    value: 2500000,                     size: "25px",       label: "Astronomical"                }              ]            }          ]        };
+            const renderer = {
+				type: "simple",          
+				field: "CNTASSDVAL",
+				legendOptions: {
+					title: "Lab 6 Symbols"},          
+				symbol: {            
+					type: "simple-marker",            
+					color: "red",            
+					outline: {              
+						color: "grey"            
+						}          
+					},           
+				visualVariables: [{
+					type: "size",              
+					field: "CNTASSDVAL",              
+					stops: [{                  
+						value: 100000,                   
+						size: "7px",     
+						label: "Low"                
+						},                
+						{
+                   		value: 500000,                    
+						size: "17px",      
+						label: "Medium"                
+						}, 
+						{     
+						value: 1000000,                     
+						size: "26px",       
+						label: "High"                
+						}]            
+					}]        
+				};
 
-
-            // const renderer = {
-            //     type: "simple",
-            //     field: "CNTASSDVAL",
-            //     legendOptions: {title: "Assessed values in Lincoln",
-            //     symbol: {
-            //         type: "simple-marker",
-            //         color: "yellow",
-            //         outline:{
-            //             color: "black"
-            //         }
-            //     },
-            //     visualVariables: [
-            //         {
-            //             type: "size",
-            //             field: "CNTASSDVAL",
-            //             stops:[
-            //                 {
-            //                     value: 25000,
-            //                     size: "5px",
-            //                     label: "Under 25,000"
-            //                 },
-            //                 {
-            //                     value: 100000,
-            //                     size: "10px",
-            //                     label: "20,000 to 99,999"
-            //                 },
-            //                 {
-            //                     value: 500000,
-            //                     size: "15px",
-            //                     label: "100,000 to 500,000"
-            //                 },
-            //                 {
-            //                     value: 2500000,
-            //                     size: "25px",
-            //                     label: "Astronomical"
-            //                 },
-            //             ]
-            //         }
-            //     ]
-            //     }
-            // };
             
             const url = "https://opendata.arcgis.com/datasets/5aa5f17d117f409d8608ec1bf6de06d6_0.geojson";
             const geojsonLayer = new GeoJSONLayer({
                 url: url,
-                copyright: "Christian Nielsen Geog 817",
+                copyright: "Christian Nielsen Geog 817 Lab 6",
                 renderer: renderer
             });
         
@@ -80,7 +68,7 @@
             var view = new MapView({
                 container: "viewDiv",
                 map: map,
-                zoom: 17,
+                zoom: 8,
                 center: [-96.68, 40.81]
             });     
 
@@ -88,12 +76,12 @@
                 view: view,
                 layerInfos: [{
                     layer: geojsonLayer,
-                    title: "Legend"
+                    title: "Lab 6 Symbols"
                 }]
             });
 
             map.add(featureLayer);
-            view.ui.add(legend, "bottom-right");
+            view.ui.add(legend, "bottom-left");
 
 
 
