@@ -27,87 +27,86 @@
 						position: {
 							latitude: 41.6608232,
 							longitude: -91.537668,
-							z: 290
+							z: 300
 						},
 						tilt: 60,
-						heading: 330
+						heading: 350
 					},
 					environment: {
 						lighting: {
-							date: new Date("April 15, 2020 16:00:00 EDT"),
+							date: new Date("April 15, 2020 10:00:00 EDT"),
 							directShadowsEnabled: true,
 							ambientOcclusionEnabled: true
 						}
 					}
-				})
-			});
-
-			var uniqueValueInfos = [
-				{
-					value: "Crataegus sp.",
-					symbol: {
-						type: "web-style",
-						name: "Crataegus",
-						styleName: "EsriRealisticTreesStyle"
+				});
+			
+				var uniqueValueInfos = [
+					{ 
+						value: "Crataegus sp.", 
+						symbol: {
+							type: "web-style", //autocasts as new WebStyleSymbol()
+							name: "Agave", 
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Fraxinus pennsylvanica",
+						symbol: {
+							type: "web-style", //autocasts as new WebStyleSymbol()
+							name: "Carnegiea",
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Picea abies",
+						symbol: {
+							type: "web-style", //autocasts as newWebStyleSymbol()
+							name: "Opuntia",
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Gleditsia triacanthos",
+						symbol: {
+							type: "web-style", //autocasts as newWebStyleSymbol()
+							name: "Helianthus",
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Fagus grandifolia", 
+						symbol: {
+							type: "web-style", //autocasts as newWebStyleSymbol()
+							name: "Bulbophyllum",
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Quercus macrocarpa",
+						symbol: {
+							type: "web-style", //autocasts as newWebStyleSymbol()
+							name: "Yucca",
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Pinus strobus",
+						symbol: {
+							type: "web-style", //autocasts as newWebStyleSymbol()
+							name: "Sabal",
+							styleName: "EsriRealisticTreesStyle"
+						}
+					},
+					{
+						value: "Liriodendron tulipifera",
+						symbol: {
+							type: "web-style", //autocasts as newWebStyleSymbol()
+							name: "Echinodorus",
+							styleName: "EsriRealisticTreesStyle"
+						}
 					}
-				},
-				{
-					value: "Fraxinus pennsylvanica",
-					symbol: {
-						type: "web-style",
-						name: "Fraxinus",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				},
-				{
-					value:"Picea abies",
-					symbol: {
-						type: "web-style",
-						name: "Picea",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				},
-				{
-					value: "Gleditsia triacanthos",
-					symbol: {
-						type: "web-style",
-						name: "Robinia",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				},
-				{
-					value: "Fagus grandifolia",
-					symbol: {
-						type: "web-style",
-						name: "Fagus",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				},
-				{
-					value: "Quercus macrocarpa",
-					symbol: {
-						type: "web-style",
-						name: "Quercus",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				},
-				{
-					value: "Pinus strobus",
-					symbol: {
-						type: "web-style",
-						name: "Pinus",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				},
-				{
-					value: "Liriodendron tulipifera",
-					symbol: {
-						type: "web-style",
-						name: "Philodendron",
-						styleName: "EsriRealisticTreesStyle"
-					}
-				}
-			];
+				];
 
 			var vegetationLayer = new FeatureLayer({
 				url: "https://maps.facilities.uiowa.edu/arcgis/rest/services/Features/Trees/MapServer/1",
@@ -119,7 +118,7 @@
 					field: "Scientific",
 					defaultSymbol: {
 						type: "web-style",
-						name: "Unknown",
+						name: "Helianthus",
 						styleName: "EsriRealisticTreesStyle"
 					},
 					uniqueValueInfos: uniqueValueInfos,
@@ -136,7 +135,13 @@
 					]
 				}
 			});
-			map.add(vegetationLayer);
+
+			var bikesLayer = new FeatureLayer({
+				url: "https://maps.facilities.uiowa.edu/arcgis/rest/services/Features/Bikes/MapServer/5"
+			});
+
+			map.addMany([vegetationLayer, bikesLayer]);
+		});
 		</script>
 	</head>
 
