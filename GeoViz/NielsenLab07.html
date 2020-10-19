@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Colorado Fires, 10/19/2020</title>
+    	<meta charset="utf-8" />
+
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+		<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+
+		<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+		<!--script src="src/leaflet.motion.js"></script>
+		<script src="src/leaflet.motion.utils.js"></script>
+		<script src="src/leaflet.motion.easing.js"></script>
+		<script src="src/layer/leaflet.motion.polyline.js"></script>
+		<script src="src/layer/leaflet.motion.polygon.js"></script>
+		<script src="src/layer/leaflet.motion.group.js"></script>
+		<script src="src/layer/leaflet.motion.seq.js"></script-->
+		<script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
+        <style>
+            html, body, #map { width: 100%; height: 100%; margin: 0px; padding: 0px;}
+			.leaflet-div-icon {
+				background: transparent!important;
+				border: none!important;
+				color: white;
+			}
+
+			.red {
+				color: red!important;
+			}
+			.mirror{
+    			display: inline-block; 
+				font-size: 30px;
+				-webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+				-moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+				-o-transform: matrix(-1, 0, 0, 1, 0, 0);
+				transform: matrix(-1, 0, 0, 1, 0, 0);
+}	
+        </style>
+     </head>
+
+    <body>
+
+		<div id="map"></div>
+    	<script>
+			var map = L.map("map").setView([40.117519, -105.215522], 9);
+
+			L.tileLayer('http://tile.stamen.com/terrain/{z}/{x}/{y}.png').addTo(map);
+
+			var options = {
+		        draw: {
+		            circle: false, // Turns off this drawing tool
+		            rectangle: false,
+		            marker: false,
+					circlemarker: false
+		        }
+		    };
+
+			var drawControl = new L.Control.Draw(options);
+		    map.addControl(drawControl);
+
+		    map.on(L.Draw.Event.CREATED, function (e) {
+		        var type = e.layerType,
+		            layer = e.layer;
+
+				if (type === "polyline") {
+					var line = L.motion.polyline(layer.getLatLngs(), {
+						color: "orange"
+					}, {
+						auto: true,
+						easing: L.Motion.Ease.swing
+					}).motionSpeed(100000).addTo(map);
+				}
+
+				if (type === "polygon") {
+					L.motion.polygon(layer.getLatLngs(), {
+						color: "red",
+						fill: true,
+						fillOpacity: 0.4
+					},{
+						auto: true
+					}, {
+						removeOnEnd: true,
+						icon: L.divIcon({className:"red", html: "<i class='fa fa-superpowers fa-spin fa-2x' aria-hidden='true' motion-base='0'></i>", iconSize: L.point(24, 24), iconAnchor: L.point(5, 22)})
+					}).motionDuration(10000).addTo(map);
+				}
+		    });
+
+			var trackRoute = JSON.parse('[{"lat":40.635064,"lng":-105.711094},{"lat":40.188507,"lng":-105.330889}]');
+			var shipRoute = JSON.parse('[{"lat":40.188507,"lng":-105.330889},{"lat":40.055511,"lng":-105.473638}]');
+			var carRoute = JSON.parse('[{"lat":40.055511,"lng":-105.473638},{"lat":39.862937,"lng":-106.045416}]');
+			var planeRoute1 = JSON.parse('[{"lat":39.862937,"lng":-106.045416},{"lat":40.221321,"lng": -106.198299}]');
+			var planeRoute2 = JSON.parse('[{"lat":40.221321,"lng": -106.198299},{"lat":40.635064,"lng":-105.711094}]');
+
+			fireIcon = L.divIcon({html: "<span style='font-size:30px;'>&#128293</span>", iconSize: L.point(27.5, 24)})
+
+			var fireOne = L.marker([40.635064, -105.711094], {icon: fireIcon}).addTo(map); 
+			var fireTwo = L.marker([40.188507, -105.330889], {icon: fireIcon}).addTo(map);
+			var fireThree = L.marker([40.055511, -105.473638], {icon: fireIcon}).addTo(map);
+			var fireFour = L.marker([39.862937, -106.045416], {icon: fireIcon}).addTo(map);
+			var fireFive = L.marker([40.221321, -106.198299], {icon: fireIcon}).addTo(map);
+
+			fireOne.bindPopup('<p>Cameron Peak Fire</p>');
+			fireTwo.bindPopup('<p>CalWood Fire</p>');
+			fireThree.bindPopup('<p>Lefthand Canyon Fire</p>');
+			fireFour.bindPopup('<p>Williams Fork Fire</p>');
+			fireFive.bindPopup('<p>East Troublesome Fire</p>');
+
+			var seqGroup = L.motion.seq([
+					L.motion.polyline(trackRoute, {
+					color: "orangered"
+					}, {
+						easing: L.Motion.Ease.easeInOutQuad
+					}, {
+						removeOnEnd: true,
+						icon: L.divIcon({html: "<span class='mirror' style='font-size:30px;'>&#128657</span>", iconSize: L.point(27.5, 24)})
+					}).motionDuration(8000),
+					L.motion.polyline(shipRoute, {
+						color: "green"
+					}, {
+						easing: L.Motion.Ease.easeInOutQuart
+					}, {
+						removeOnEnd: true,
+						///showMarker: true,
+						icon: L.divIcon({html: "<span style='font-size:30px;'>&#128658</span>", iconSize: L.point(27.5, 24)}) ///L.divIcon({html: "<i class='fa fa-ship fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
+					}).motionDuration(9000),
+					L.motion.polyline(carRoute, {
+						colors: "SlateGrey"
+					}, {
+						easing: L.Motion.Ease.easeInOutElastic
+					}, {
+						removeOnEnd: true,
+						icon: L.divIcon({html: "<span style='font-size:30px;'>&#128641</span>", iconSize: L.point(27.5, 24)})
+					}).motionDuration(7000),
+					L.motion.seq([L.motion.polyline(planeRoute1, {
+									color:"indigo"
+								}, null, {
+									removeOnEnd: true,
+									icon: L.divIcon({html: "<span class='mirror' style='font-size:35px;'>&#128747</span>", iconSize: L.point(19, 24)})
+								}).motionDuration(5000),
+								L.motion.polyline(planeRoute2, {
+									color:"khaki"
+								}, null, {
+									removeOnEnd: true,
+									icon: L.divIcon({html: "<span style='font-size:35px;'>&#128748</span>", iconSize: L.point(19, 24)})
+								}).motionDuration(7000)
+							])
+				]).addTo(map);
+
+
+			seqGroup.on("click", function(){
+				seqGroup.motionStart();
+			});
+
+			seqGroup.on("dblclick", function(e){
+				seqGroup.motionToggle();
+			});
+
+			setTimeout(function () {
+				seqGroup.motionStart();
+			}, 1000);
+
+    	</script>
+    </body>
+
+</html>
