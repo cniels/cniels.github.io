@@ -42,12 +42,12 @@ var options = {
 Sandcastle.addToolbarMenu(
   [
     {
-      text: "KML - Global Science Facilities",
+      text: "KMZ - Nebraska PSAP Locations",
       onselect: function () {
         viewer.camera.flyHome(0);
         viewer.dataSources.add(
           Cesium.KmlDataSource.load(
-            "https://sandcastle.cesium.com/SampleData/kml/facilities/facilities.kml",
+            "https://cniesl.github.io/GeoViz/Lab10/PSAP_Locations.kmz",
             options
           )
         );
