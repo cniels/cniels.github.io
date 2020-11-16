@@ -54,12 +54,12 @@ Sandcastle.addToolbarMenu(
       },
     },
     {
-      text: "KMZ with embedded data - GDP per capita",
+      text: "KMZ with embedded data - PSAP Locations with Population",
       onselect: function () {
         viewer.camera.flyHome(0);
         viewer.dataSources.add(
           Cesium.KmlDataSource.load(
-            "https://sandcastle.cesium.com/SampleData/kml/gdpPerCapita2008.kmz",
+            "https://cniels.github.io/GeoViz/Lab10/PSAP_Locations_Bubbles.kmz",
             options
           )
         );
