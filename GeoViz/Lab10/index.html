@@ -44,7 +44,9 @@ Sandcastle.addToolbarMenu(
     {
       text: "KMZ - Nebraska PSAP Locations",
       onselect: function () {
-        viewer.camera.flyHome(0);
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(41.525, -99.861667, 400)
+        });
         viewer.dataSources.add(
           Cesium.KmlDataSource.load(
             "https://cniels.github.io/GeoViz/Lab10/PSAP_Locations.kmz",
