@@ -1,0 +1,802 @@
+
+
+<script language="JavaScript">
+<!--
+function changeIssue(titleId, volumeId) {
+	// Redirect
+	document.location.href="IssueTocView.asp?titleId=" + titleId + "&volumeId=" + volumeId + "&issueId=" + document.browse.issue[document.browse.issue.selectedIndex].value
+}
+function changeView(titleId, volumeId, issueId) {
+	// Redirect
+	document.location.href="IssuePreview.asp?titleId=" + titleId + "&volumeId=" + volumeId + "&issueId=" + issueId + "&view=" + document.browse.view[document.browse.view.selectedIndex].value
+}
+-->
+</script>
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>HarpWeek - Electronic Access to Harper's Weekly</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link href="/Common/lcw.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body bgcolor="#999966" leftmargin="0" link="#333300" text="#000000" topmargin="0" vlink="#666633" marginheight="0" marginwidth="0">
+<table border="0" cellpadding="0" cellspacing="0" width="791">
+  <tbody>
+    <tr valign="Top">
+
+    <td bgcolor="#cccc99" rowspan="2"><a target="_new" href="http://www.harpweek.com.libproxy.unl.edu"><img border="0" height="74" width="156" src="images/Header-Home1aNew.gif" alt="www.harpweek.com"></a>
+    </td>
+
+    <td bgcolor="#cccc99"><img height="56" src="images/Header-Home1b.gif" width="367">
+    </td>
+
+    <td bgcolor="#cccc99"><img height="56" src="images/Header-Home1c.gif" width="268">
+    </td>
+    </tr>
+    <tr height="18" valign="middle">
+
+      <td bgcolor="#cccc99" colspan="2" valign="middle">&nbsp;<strong><a href="Default.asp">Welcome</a></strong>&nbsp;|&nbsp;<strong><a href="about.asp">About</a></strong>&nbsp;|&nbsp;<strong><a href="BrowseIssue.asp?titleId=HW">Browse
+        Issues</a></strong>&nbsp;|&nbsp;<strong><a href="SearchSpec.asp">Search</a></strong>&nbsp;|&nbsp;<strong><a href="findingaids.asp">Finding Aids</a></strong>&nbsp;|&nbsp;<strong><a href="/Help/Help.asp" target="_blank">Help</a></strong>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- ----- MAIN CONTENT AREA, TABLE IS 791 WIDE 3/24/01 ----- -->
+<table bgcolor="#999966" border="0" cellpadding="0" cellspacing="0" width="791">
+  <tbody>
+    <tr>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor="#ffffe0" width="754">
+
+
+          <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+             <tr>
+               <td width="10%">
+                 &nbsp;
+               </td>
+               <td width="80%" align="center">
+                 &nbsp;
+               </td>
+               <td width="10%" align="right">
+                 &nbsp;
+               </td>
+             </tr>
+             <tr>
+               <td width="10%">
+                 &nbsp;
+               </td>
+               <td width="80%" align="center">
+                 <!--<h1><b>Harper's Weekly&nbsp;-&nbsp;1857</b></h1>-->
+                 <h1><b>Harper's Weekly&nbsp;-&nbsp;Issue Table of Contents View</b></h1>
+               </td>
+               <td width="10%" align="right">
+                 <a href="Help/help.asp#issuetocviewasp" target="_blank"><img src="images/Information_blue.gif" align="middle" border="0"></a>
+               </td>
+             </tr>
+          </table>
+
+
+<table width=700>
+<tr>
+<td width=10>&nbsp;&nbsp;</td>
+<td width=690>
+
+	<form method="post" name="browse">
+        <table border="0" cellspacing="0" cellpadding="0" width="752">
+          <tr>
+            <td align="left" valign="bottom" width="25">&nbsp;</td>
+            <td width="114" align="left" valign="bottom">&nbsp;</td>
+            <td width="493" align="center" valign="middle">&nbsp;</td>
+            <td width="120" valign="bottom" align="left"><b>View:</b></td>
+          </tr>
+          <tr valign="middle">
+            <td align="left" width="25">&nbsp;</td>
+            <td align="left" width="114">&nbsp; </td>
+            <td align="center" width="493">
+              <div align="center">
+                <select name="issue" onChange="changeIssue('HW', '1857')">
+
+                  <option value="0103" selected>01/03/1857</option>
+                  
+                  <option value="0110">01/10/1857</option>
+                  
+                  <option value="0117">01/17/1857</option>
+                  
+                  <option value="0124">01/24/1857</option>
+                  
+                  <option value="0131">01/31/1857</option>
+                  
+                  <option value="0207">02/07/1857</option>
+                  
+                  <option value="0214">02/14/1857</option>
+                  
+                  <option value="0221">02/21/1857</option>
+                  
+                  <option value="0228">02/28/1857</option>
+                  
+                  <option value="0307">03/07/1857</option>
+                  
+                  <option value="0314">03/14/1857</option>
+                  
+                  <option value="0321">03/21/1857</option>
+                  
+                  <option value="0328">03/28/1857</option>
+                  
+                  <option value="0404">04/04/1857</option>
+                  
+                  <option value="0411">04/11/1857</option>
+                  
+                  <option value="0418">04/18/1857</option>
+                  
+                  <option value="0425">04/25/1857</option>
+                  
+                  <option value="0502">05/02/1857</option>
+                  
+                  <option value="0509">05/09/1857</option>
+                  
+                  <option value="0516">05/16/1857</option>
+                  
+                  <option value="0523">05/23/1857</option>
+                  
+                  <option value="0530">05/30/1857</option>
+                  
+                  <option value="0606">06/06/1857</option>
+                  
+                  <option value="0613">06/13/1857</option>
+                  
+                  <option value="0620">06/20/1857</option>
+                  
+                  <option value="0627">06/27/1857</option>
+                  
+                  <option value="0704">07/04/1857</option>
+                  
+                  <option value="0711">07/11/1857</option>
+                  
+                  <option value="0718">07/18/1857</option>
+                  
+                  <option value="0725">07/25/1857</option>
+                  
+                  <option value="0801">08/01/1857</option>
+                  
+                  <option value="0808">08/08/1857</option>
+                  
+                  <option value="0815">08/15/1857</option>
+                  
+                  <option value="0822">08/22/1857</option>
+                  
+                  <option value="0829">08/29/1857</option>
+                  
+                  <option value="0905">09/05/1857</option>
+                  
+                  <option value="0912">09/12/1857</option>
+                  
+                  <option value="0919">09/19/1857</option>
+                  
+                  <option value="0926">09/26/1857</option>
+                  
+                  <option value="1003">10/03/1857</option>
+                  
+                  <option value="1010">10/10/1857</option>
+                  
+                  <option value="1017">10/17/1857</option>
+                  
+                  <option value="1024">10/24/1857</option>
+                  
+                  <option value="1031">10/31/1857</option>
+                  
+                  <option value="1107">11/07/1857</option>
+                  
+                  <option value="1114">11/14/1857</option>
+                  
+                  <option value="1121">11/21/1857</option>
+                  
+                  <option value="1128">11/28/1857</option>
+                  
+                  <option value="1205">12/05/1857</option>
+                  
+                  <option value="1212">12/12/1857</option>
+                  
+                  <option value="1219">12/19/1857</option>
+                  
+                  <option value="1226">12/26/1857</option>
+                  
+                </select>
+              </div>
+            </td>
+            <td width="120">
+              <select name="view" onChange="changeView('HW', '1857', '0103')">
+                <option value="toc" selected>Table of Contents</option>
+                <option value="images">Full Page Images</option>
+                <option value="lightbox">Issue Thumbnails</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="25">&nbsp;</td>
+            <td width="114">&nbsp;</td>
+            <td width="493">&nbsp;</td>
+            <td width="120">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="25">&nbsp;</td>
+            <td width="114">&nbsp;</td>
+            <td width="493">&nbsp;</td>
+            <td width="120">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="4">
+		<div align="center"><font size="1">
+
+               &nbsp;&nbsp;&nbsp;<a href="IssueTocView.asp?titleId=HW&volumeId=1857&issueId=0110">Next Issue&gt;&gt;</a>
+
+		</font></div>
+	   </td>
+          </tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">&nbsp;</td>
+          </tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">
+            
+
+		<center><a href="IssueTocView.asp?titleId=HW&volumeId=1857&issueId=0103&ads=yes">Advertisements found in this issue</a></center>
+	
+            
+            </td>
+          </tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">&nbsp;</td>
+          </tr>
+
+        </table>
+	</form>
+    <!--  <table width="752" border="0" cellspacing="0" cellpadding="0">  -->
+
+
+
+<!--	<tr>
+	  <td width="21">&nbsp;</td>  -->
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000007%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0001a%2D0001a&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0001%7C"><b>Harper's Weekly   A Journal of Civilization.</b></a>
+&nbsp;&nbsp;0001a-0001a
+
+
+<br>
+			Vol. I.?o. 1.] NEW YORK, SATURDAY, JANUARY 3, 1857. [Price Five Cents.
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000008%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B2%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0001ad%2D0001ad&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0001%7C"><b>No article title available...</b></a>
+&nbsp;&nbsp;0001ad-0001ad
+
+
+<br>
+			THE tardy officials of the States have at length completed their task of canvassing the votes given at the recent election. The re- sult stands thus: 
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000009%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B3%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0002ab%2D0002ab&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0002%7C"><b>THE FAMILY, THE CHURCH, AND THE   STATE.</b></a>
+&nbsp;&nbsp;0002ab-0002ab
+
+
+<br>
+			There are at least three institutions among men which, however modified by extraneous circumstances, are necessarily imperishable. These are the Famil
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000010%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B4%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0002bc%2D0002bc&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0002%7C"><b>DEAR WOMAN.</b></a>
+&nbsp;&nbsp;0002bc-0002bc
+
+
+<br>
+			
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000011%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B5%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0002cd%2D0002cd&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0002%7C"><b>HOW SHALL WE BEAUTIFY OUR   LIFE?</b></a>
+&nbsp;&nbsp;0002cd-0002cd
+
+
+<br>
+			The common charge that we Americans are intently and intensely devoted to the acquisition of money is not as true as our calumniators claim, nor as fa
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000012%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B6%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0002d%2D0003a&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0002%7CHW%2D1857%2D01%2D03%2D0003%7C"><b>THE BIG OVEN.</b></a>
+&nbsp;&nbsp;0002d-0003a
+
+
+<br>
+			A Mr. Berdan has in successful operation in Brooklyn a gigantic bakery, which can turn five hundred barrels of flour daily into a proportion- ate numb
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000013%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B7%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0003a%2D0003a&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0003%7C"><b>THE WHITE MOUSE.</b></a>
+&nbsp;&nbsp;0003a-0003a
+
+
+<br>
+			A wicked cat, quite gray and hoary, A shoemaker's wife, so goes the story, Displayed in her case, to admiring eyes, Gay-colored slippers of every size
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000014%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B8%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0003ac%2D0003ac&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0003%7C"><b>CHAT.</b></a>
+&nbsp;&nbsp;0003ac-0003ac
+
+
+<br>
+			We are in the midst of the Holidays—those blessed institutions for the repose of over-tasked man, and the joy of ever-buoyant youth. How seasonably th
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000015%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B9%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0003cd%2D0003cd&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0003%7C"><b>A RHYME FOR THE ATLANTIC TELE-   GRAPH.</b></a>
+&nbsp;&nbsp;0003cd-0003cd
+
+
+<br>
+			BY MARTIN F. TUPPER.World! what a wonder is this, Grandly and simply sublime— All the Atlantic abyss Leapt in a nothing of time ! Even the steeds of t
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000016%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B10%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0003d%2D0004ab&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0003%7CHW%2D1857%2D01%2D03%2D0004%7C"><b>BARON MUNCHAUSEN IN AMERICA.</b></a>
+&nbsp;&nbsp;0003d-0004ab
+
+
+<br>
+			The Saxon Penates—the cat, the clock, and the tea-kettle, were dozing about the fire-place. The tea-kettle was singing. Formerly that same kettle was 
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000017%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B11%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0004bd%2D0005ac&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0004%7CHW%2D1857%2D01%2D03%2D0005%7C"><b>A RECENT CONFESSION OF AN OPIUM   EATER.</b></a>
+&nbsp;&nbsp;0004bd-0005ac
+
+
+<br>
+			There is no necessity for telling the reader how I came into the company with which he will find me associated in the ensuing narrative; and there are
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000018%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B12%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0005d%2D0006ab&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0005%7CHW%2D1857%2D01%2D03%2D0006%7C"><b>LITERARY.</b></a>
+&nbsp;&nbsp;0005d-0006ab
+
+
+<br>
+			The History of the Reign of the Emperor Charles the Fifth, by William Robertson, D.D.: with An Account of the Emper- or's Life after his Abdication, b
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000019%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B13%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0006cd%2D0007a&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0006%7CHW%2D1857%2D01%2D03%2D0007%7C"><b>DOMESTIC INTELLIGENCE.</b></a>
+&nbsp;&nbsp;0006cd-0007a
+
+
+<br>
+			THE UNITED STATES.CONGRESS.But little business of importance has been trans- acted by Congress during the week. On Satur- day last, Senator Wilson def
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000020%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B14%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0007ad%2D0007ad&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0007%7C"><b>FOREIGN NEWS.</b></a>
+&nbsp;&nbsp;0007ad-0007ad
+
+
+<br>
+			EUROPE.THE NEW PARIS CONFERENCE.The Cabinet of St. Petersburg has addressed a circular to its diplomatic agents exposing the steps taken by the Cabine
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000021%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B15%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0008ad%2D0010a&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0008%7CHW%2D1857%2D01%2D03%2D0009%7CHW%2D1857%2D01%2D03%2D0010%7C"><b>A POLICE-OFFICER'S SEVEN THOU-   SAND MILES' CHASE.</b></a>
+&nbsp;&nbsp;0008ad-0010a
+
+
+<br>
+			A few months since information was brought to me, by the officers connected with several Ohio banks, of the mysterious disappearance of one of their c
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000001%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B15%5D%2Fp%5B4%5D%2Ffigure%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0008bc%2D0008bc&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0008%7C"><b>A BREEZE IN THE GULF OF CALIFORNIA.</b></a>
+&nbsp;&nbsp;0008bc-0008bc
+
+
+<br>
+			
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000002%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B15%5D%2Fp%5B8%5D%2Ffigure%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0008bc%2D0008bc&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0008%7C"><b>LOADING CATTLE.</b></a>
+&nbsp;&nbsp;0008bc-0008bc
+
+
+<br>
+			
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000003%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B15%5D%2Fp%5B18%5D%2Ffigure%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0009bc%2D0009bc&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0009%7C"><b>THE ARREST.</b></a>
+&nbsp;&nbsp;0009bc-0009bc
+
+
+<br>
+			
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000004%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B15%5D%2Fp%5B19%5D%2Ffigure%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0009bc%2D0009bc&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0009%7C"><b>RIDE THROUGH THE MOUNTAINS.</b></a>
+&nbsp;&nbsp;0009bc-0009bc
+
+
+<br>
+			
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000022%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B16%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0010ad%2D0011ac&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0010%7CHW%2D1857%2D01%2D03%2D0011%7C"><b>DO WE BURY ALIVE?</b></a>
+&nbsp;&nbsp;0010ad-0011ac
+
+
+<br>
+			
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000023%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B17%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0011cd%2D0011cd&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0011%7C"><b>NOTES AND QUERIES.</b></a>
+&nbsp;&nbsp;0011cd-0011cd
+
+
+<br>
+			A Degree of mental activity unknown to for- mer times is characteristic of the present age. The same impulse that leads men to girdle the material wor
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000005%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B18%5D%2Fp%5B6%5D%2Ffigure%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0012ac%2D0012ac&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0012%7C"><b>No article title available...</b></a>
+&nbsp;&nbsp;0012ac-0012ac
+
+
+<br>
+			Police Constable (to Boy).
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000024%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B18%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0012ad%2D0013ac&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0012%7CHW%2D1857%2D01%2D03%2D0013%7C"><b>A TRADITION OF ROTHERHITHE.</b></a>
+&nbsp;&nbsp;0012ad-0013ac
+
+
+<br>
+			It was a still autumn evening, about fifty years since, and a strong ebb-tide, which was just on the turn, had shrunk the waters of the Thames to thei
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000006%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B18%5D%2Fp%5B46%5D%2Ffigure%5B1%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0013ab%2D0013ab&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0013%7C"><b>A DELICATE EXCUSE.</b></a>
+&nbsp;&nbsp;0013ab-0013ab
+
+
+<br>
+			Lady Of The House.
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000025%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B19%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0013c%2D0013c&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0013%7C"><b>CHRISTMAS, 1856.</b></a>
+&nbsp;&nbsp;0013c-0013c
+
+
+<br>
+			I.As journeying toward Jerusalem Our Lord to Bethphage came, Great multitudes along the way Sang anthems to His name; With emblems of rejoicing too Th
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000026%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B20%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0013cd%2D0014a&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0013%7CHW%2D1857%2D01%2D03%2D0014%7C"><b>FROM OUR ITALIAN CORRESPONDENT.</b></a>
+&nbsp;&nbsp;0013cd-0014a
+
+
+<br>
+			Florence , Dec., 1856.Messrs. Editors,This city, at all times noted for being a menagerie of lions, living or dead, has already received a considerabl
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000027%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B21%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0014ab%2D0014ab&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0014%7C"><b>NOTES ON THE ARTS AND SCIENCES.</b></a>
+&nbsp;&nbsp;0014ab-0014ab
+
+
+<br>
+			Cause of Earthquakes.M. Perrey, a distin- guished European sarant, has been engaged, of late years, in a learned investigation of earth- quakes, and h
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000028%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B22%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0014bc%2D0014bc&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0014%7C"><b>THINGS WISE AND OTHERWISE.</b></a>
+&nbsp;&nbsp;0014bc-0014bc
+
+
+<br>
+			Dr. Johnson, in the fullness of his years and knowledge, was heard to say, 
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000029%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B23%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0014cd%2D0014cd&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0014%7C"><b>WEEKLY MARKET SUMMARY.</b></a>
+&nbsp;&nbsp;0014cd-0014cd
+
+
+<br>
+			New York , Friday, Dec. 26, 1856.The trade of the past week has not been very vigorous. The long passages of the European steamers, the gener- ally un
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000030%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fbody%5B1%5D%2Fdiv1%5B24%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0014d%2D0014d&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0014%7C"><b>HARPER'S WEEKLY.</b></a>
+&nbsp;&nbsp;0014d-0014d
+
+
+<br>
+			A JOURNAL OF CIVILIZATION.Neither labor nor expense will be spared to make it the best Family Newspaper in the World—one whose cheer- ful and genial c
+</FONT>
+<br><br>
+
+
+
+<FONT face="Verdana, Arial, Helvetica, sans-serif" size="1">
+
+
+<a href="viewarticletext.asp?webhitsfile=hw18570103000038%2Ehtm&xpath=%2FTEI%2E2%5B1%5D%2Ftext%5B1%5D%2Fback%5B1%5D%2Fdiv1%5B8%5D&xml=HW%5C1857%5C18570103%2Exml&titleid=HW&volumeid=1857&issueid=0103&pagerange=0015b%2D0015b&restriction=&pageIDs=%7CHW%2D1857%2D01%2D03%2D0015%7C"><b>A FANTASY.</b></a>
+&nbsp;&nbsp;0015b-0015b
+
+
+<br>
+			BY P. W. M.'Tis told somewhere in Eastern story That those who love once bloomed as flowers On the same stem, amid the glory Of Eden's green and fragr
+</FONT>
+<br><br>
+
+
+
+</td></tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">&nbsp;</td>
+          </tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">
+
+
+		<center><a href="IssueTocView.asp?titleId=HW&volumeId=1857&issueId=0103&ads=yes">Advertisements found in this issue</a></center>
+	
+            
+            </td>
+          </tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td colspan="4">
+		<div align="center"><font size="1">
+
+               &nbsp;&nbsp;&nbsp;<a href="IssueTocView.asp?titleId=HW&volumeId=1857&issueId=0110">Next Issue&gt;&gt;</a>
+
+		</font></div>
+	   </td>
+          </tr>
+          <tr align="center" valign="middle">
+            <td colspan="4">&nbsp;</td>
+          </tr>
+
+</table>
+
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor="#ffffe0" width="754">&nbsp;
+      </td>
+    </tr>
+    <tr valign="Top">
+                <td bgcolor="#ffffec" align="center" height="15"><font size="1"><strong><a href="default.asp">Welcome</a></strong> | <strong><a href="about.asp">About</a></strong> | <strong><a href="BrowseIssue.asp?titleId=HW">Browse Issues</a></strong> | <strong><a href="SearchSpec.asp">Search</a></strong> | <strong><a href="FindingAids.asp">Finding Aids</a></strong>&nbsp;|&nbsp;<strong><a href="/Help/Help.asp" target="_blank">Help</a></strong></font>
+                </td>
+    </tr>
+
+    <tr>
+      <td bgcolor="#ffffe0" width="754">&nbsp;
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      <td bgcolor="#ffffe0" width="754">&nbsp;
+      </td>
+    </tr>
+    <tr valign="Top">
+                <td bgcolor="#ffffec" align="center" height="15"><font size="1"><strong>
+			<a href="http://www.proquest.com.libproxy.unl.edu/go/termsandconditions" onclick="this.target='_new';">Terms and Conditions</a>
+			| <a href="http://www.proquest.com.libproxy.unl.edu/go/privacy" onclick="this.target='_new';">Privacy Policy</a> 
+			| <a href="http://www.proquest.com.libproxy.unl.edu/go/cookie" onclick="this.target='_new';">Cookie Policy</a><br>
+		</strong></font>
+                </td>
+    </tr>
+
+    <tr>
+      <td bgcolor="#ffffe0" width="754">&nbsp;
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
+<!-- ------- FOOTER: LINKS AND COPYRIGHT ------- -->
+<table border="0" width="760" height="16" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="11" height="16"></td>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="700">
+        <tr>
+          <td height="11"></td>
+        </tr>
+        <tr>
+          <td>
+
+<p><font color="#000000" face="Arial" size="1">Website design ©
+2001-2013 HarpWeek, LLC.<br>
+All Content © 1998-2013 HarpWeek, LLC.<br>
+Please submit questions to <a href="mailto:support@harpweek.com">support@harpweek.com</a></font>.</p>
+            <p>&nbsp;
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
